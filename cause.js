@@ -1,22 +1,22 @@
- // Reasons database
- const reasons = [
-    { 
-        text: "You’re such a kind and wonderful person, and I feel lucky to share such a good bond with you. 💖", 
+// Reasons database
+const reasons = [
+    {
+        text: "Chúc em tuổi mới ngày càng xinh gái hơnnn, ngày càng yêu thương anh hơn nheee  💖",
         emoji: "🌟",
         gif: "gif1.gif"
     },
-    { 
-        text: "May your day be filled with love, laughter, and endless joy. 🌸 ", 
+    {
+        text: "Chúc cho ngày nào của em cũng hạnh phúc, vui vẻ, và ngập tràn tiếng cười nha  🌸 ",
         emoji: "💗",
         gif: "gif2.gif"
     },
-    { 
-        text: "Wishing you success, happiness, and everything your heart desires. ✨ ", 
+    {
+        text: "Chúc em đạt được thành công, đạt được mong muốn và đạt được tất cả các mục tiêu mà em đề ra nhe ✨ ",
         emoji: "💕",
         gif: "gif1.gif"
     },
-    { 
-        text: "Stay the amazing girl you are—always spreading positivity around. Have the happiest year ahead! 🥳 ", 
+    {
+        text: " Tuổi mới nên là em nhớ iu thương anh hơn, dịu dàng hơn và chăm anh nhìu hơn nhaaaa 🥳 ",
         emoji: "🌟",
         gif: "gif2.gif"
     }
@@ -33,18 +33,18 @@ let isTransitioning = false;
 function createReasonCard(reason) {
     const card = document.createElement('div');
     card.className = 'reason-card';
-    
+
     const text = document.createElement('div');
     text.className = 'reason-text';
     text.innerHTML = `${reason.emoji} ${reason.text}`;
-    
+
     const gifOverlay = document.createElement('div');
     gifOverlay.className = 'gif-overlay';
     gifOverlay.innerHTML = `<img src="${reason.gif}" alt="Friendship Memory">`;
-    
+
     card.appendChild(text);
     card.appendChild(gifOverlay);
-    
+
     gsap.from(card, {
         opacity: 0,
         y: 50,
@@ -63,10 +63,10 @@ function displayNewReason() {
     if (currentReasonIndex < reasons.length) {
         const card = createReasonCard(reasons[currentReasonIndex]);
         reasonsContainer.appendChild(card);
-        
+
         // Update counter
         reasonCounter.textContent = `Reason ${currentReasonIndex + 1} of ${reasons.length}`;
-        
+
         currentReasonIndex++;
 
         // Check if we should transform the button
@@ -76,7 +76,7 @@ function displayNewReason() {
                 duration: 0.5,
                 ease: "elastic.out",
                 onComplete: () => {
-                    shuffleButton.textContent = "Enter Our Storylane 💫";
+                    shuffleButton.textContent = "Em bấm típ nhooo 💫";
                     shuffleButton.classList.add('story-mode');
                     shuffleButton.addEventListener('click', () => {
                         gsap.to('body', {
@@ -93,7 +93,7 @@ function displayNewReason() {
 
         // Create floating elements
         createFloatingElement();
-        
+
         setTimeout(() => {
             isTransitioning = false;
         }, 500);
